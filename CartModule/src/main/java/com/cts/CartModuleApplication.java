@@ -1,4 +1,4 @@
-package com.cts.CartModule;
+package com.cts;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,12 +8,17 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
+import lombok.extern.slf4j.Slf4j;
+
 @SpringBootApplication
 @EnableDiscoveryClient
+@Slf4j
 public class CartModuleApplication {
 
 	public static void main(String[] args) {
+		log.info("Main started...");
 		SpringApplication.run(CartModuleApplication.class, args);
+		log.info("Main ended...");
 	}
 
 	@Bean

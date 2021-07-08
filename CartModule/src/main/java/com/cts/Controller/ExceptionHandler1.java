@@ -1,4 +1,5 @@
 package com.cts.Controller;
+
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,18 +15,16 @@ import com.cts.Exception.EmptyCartException;
 @RestControllerAdvice
 public class ExceptionHandler1 {
 	@ResponseStatus(code = HttpStatus.NOT_FOUND)
-	@ExceptionHandler({EmptyCartException.class})
-	public ErrorResponseDto productNotFoundException(Exception exception,HttpServletRequest request )
-	{
-		return new ErrorResponseDto(new Date(), HttpStatus.NOT_FOUND.value(), HttpStatus.NOT_FOUND.getReasonPhrase(), exception.getMessage(), request.getRequestURI());
+	@ExceptionHandler({ EmptyCartException.class })
+	public ErrorResponseDto productNotFoundException(Exception exception, HttpServletRequest request) {
+		return new ErrorResponseDto(new Date(), HttpStatus.NOT_FOUND.value(), HttpStatus.NOT_FOUND.getReasonPhrase(),
+				exception.getMessage(), request.getRequestURI());
 	}
-	
-	
-	@ExceptionHandler({Exception.class})
-	public ErrorResponseDto globalException(Exception exception,HttpServletRequest request)
-	{
-		return new ErrorResponseDto(new Date(), HttpStatus.NOT_FOUND.value(), HttpStatus.NOT_FOUND.getReasonPhrase(), exception.getMessage(), request.getRequestURI());
+
+	@ExceptionHandler({ Exception.class })
+	public ErrorResponseDto globalException(Exception exception, HttpServletRequest request) {
+		return new ErrorResponseDto(new Date(), HttpStatus.NOT_FOUND.value(), HttpStatus.NOT_FOUND.getReasonPhrase(),
+				exception.getMessage(), request.getRequestURI());
 	}
-		
 
 }

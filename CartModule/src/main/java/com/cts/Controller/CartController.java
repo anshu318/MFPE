@@ -33,7 +33,6 @@ public class CartController {
 	@PostMapping("/addProductToCart")
 	public StatusDto addProductToCart(@RequestBody CartRequestDto cartRequestDto) {
 		log.info("Added  product to cart service started");
-
 		StatusDto statusDto = new StatusDto(cartService.addToCart(cartRequestDto));
 		log.info("Added product to cart service executed successfuly");
 		return statusDto;
