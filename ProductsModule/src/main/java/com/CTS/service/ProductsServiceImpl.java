@@ -26,7 +26,7 @@ public class ProductsServiceImpl implements ProductService {
 		return productRepo.findAll();
 	}
 
-	@Override
+	@Transactional
 	public Products searchProductById(int productId) throws ProductNotFoundException {
 		Products product = productRepo.findById(productId).orElse(null);
 		if (product == null) {
@@ -36,7 +36,7 @@ public class ProductsServiceImpl implements ProductService {
 		return product;
 	}
 
-	@Override
+	@Transactional
 	public Products searchProductByName(String productName) throws ProductNotFoundException {
 		Products product = productRepo.findByName(productName).orElse(null);
 		if (product == null) {
@@ -46,7 +46,7 @@ public class ProductsServiceImpl implements ProductService {
 		return product;
 	}
 
-	@Override
+	@Transactional
 	public Products addProductRating(int productId, int rating)
 			throws ProductNotFoundException, RatingGreaterThan5Exception {
 		Products productExists = productRepo.findById(productId).orElse(null);
