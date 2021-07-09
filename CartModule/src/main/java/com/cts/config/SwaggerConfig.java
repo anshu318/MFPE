@@ -10,15 +10,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import static springfox.documentation.builders.PathSelectors.regex;
 
 
+//Configuration
 @Configuration
+//Enable Swagger
 @EnableSwagger2
 public class SwaggerConfig {
-    @Bean
-    public Docket productApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
-                .select().apis(RequestHandlerSelectors.basePackage("com.cts.Controller"))
-                .paths(regex("/cart.*"))
-                .build();
-
-    }
+//creating bean
+	@Bean
+	public Docket api() {
+		return new Docket(DocumentationType.SWAGGER_2);
+	}
 }
