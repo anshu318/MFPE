@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import com.congnizant.ecommerce.model.JwtRequest;
+import com.cts.ecommerce.model.JwtRequest;
 
 class JwtRequestTest {
 	JwtRequest jwtRequest = new JwtRequest();

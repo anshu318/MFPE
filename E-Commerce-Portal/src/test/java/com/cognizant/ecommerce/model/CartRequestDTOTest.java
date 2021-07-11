@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import com.congnizant.ecommerce.model.CartRequestDto;
+import com.cts.ecommerce.model.CartRequestDto;
 
  class CartRequestDTOTest {
 	
