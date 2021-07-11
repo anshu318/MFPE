@@ -16,6 +16,9 @@ import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Slf4j
+/*
+ * Implementation class of Vendor_Stock Service
+ * */
 public class VendorStockServiceImpl implements VendorStockService {
 
 	@Autowired

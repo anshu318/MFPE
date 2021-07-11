@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.cts.DTO.ErrorResponseDto;
 import com.cts.Exception.EmptyCartException;
-
+/*
+ * Exception Handler Class
+ * */
 @RestControllerAdvice
 public class ExceptionHandler1 {
 	@ResponseStatus(code = HttpStatus.NOT_FOUND)

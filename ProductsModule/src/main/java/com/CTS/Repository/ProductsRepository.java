@@ -7,7 +7,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.CTS.model.Products;
-
+/*
+ * Repository of Product Microservice
+ * */
 @Repository
 public interface ProductsRepository extends JpaRepository<Products, Integer> {
 

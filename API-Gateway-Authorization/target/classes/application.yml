@@ -22,7 +22,7 @@ spring:
 zuul:
   routes:
     product-services:
-      path: /product/**
+      path: /products/**
       service-id: product-service
       strip-prefix: false
 
@@ -30,6 +30,8 @@ zuul:
       path: /cart/**
       service-id: cart-service
       strip-prefix: false
+      
+    
 
 
 eureka:

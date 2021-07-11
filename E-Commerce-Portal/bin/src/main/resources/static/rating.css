@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #444;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.o-container {
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+.c-header {
+  position: relative;
+  display: block;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.c-header:after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: #eee;
+  position: absolute;
+  left: 40%;
+  right: 40%;
+}
+
+.c-box {
+  margin: 10px 0;
+  padding: 1px 1px;
+  border: 1px solid #eee;
+  background: #f9f9f9;
+}
+
+.c-box__body {
+  vertical-align: top;
+  display: inline-block;
+  color: #888;
+}
+
+/* Rating Star Widgets Style */
+.c-rating-star {
+  list-style-type: none;
+  padding: 0;
+
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.c-rating-star__item {
+  display: inline-block;
+}
+
+/* Idle State of the stars */
+.c-rating-star__icon {
+  font-size: 20px; /* Change the size of the stars */
+  color: #ccc; /* Color on idle state */
+}
+
+/* Hover state of the stars */
+.c-rating-star__item.is-hover > .c-rating-star__icon {
+  color: #ffcc36;
+}
+
+/* Selected state of the stars */
+.c-rating-star__item.is-selected > .c-rating-star__icon {
+  color: #ff912c;
+}
+
+.u-text-center {
+  text-align: center;
+}

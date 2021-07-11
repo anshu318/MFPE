@@ -7,6 +7,9 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.cts.Model.Cart;
 
+/*
+ * Cart Repository
+ * */
 public interface CartRepository extends JpaRepository<Cart, Long> {
 
 	@Query("from Cart c where c.customerId=:customerId")

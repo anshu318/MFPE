@@ -9,7 +9,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 import lombok.extern.slf4j.Slf4j;
-
+/*
+ * Cart Microservice
+ * */
 @SpringBootApplication
 @EnableDiscoveryClient
 @Slf4j

@@ -5,7 +5,9 @@ import java.util.List;
 import com.cts.DTO.CartRequestDto;
 import com.cts.DTO.CartResponseDto;
 import com.cts.Model.Vendor;
-
+/*
+ * Cart Service interface of Cart Microservice
+ * */
 public interface CartService {
 
 	public String addToCart(CartRequestDto cartRequestDto);

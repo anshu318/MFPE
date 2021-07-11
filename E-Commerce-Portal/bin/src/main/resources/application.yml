@@ -1,0 +1,8 @@
+# H2 Properties
+spring:
+
+  application:
+    name: E-Commerce-Portal
+  
+server:
+  port: 8000

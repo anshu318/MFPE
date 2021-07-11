@@ -6,7 +6,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import com.cts.Model.BuyerWishList;
-
+/*
+ * Buyer Wishlist Repository
+ * */
 public interface BuyerWishListRepo extends JpaRepository<BuyerWishList, Long>{
 	@Query("from BuyerWishList c where c.customerId=:customerId")
 	public List<BuyerWishList> getCustomerListById(long customerId);

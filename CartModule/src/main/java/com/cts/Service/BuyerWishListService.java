@@ -18,7 +18,9 @@ import com.cts.Model.Product;
 import com.cts.Repository.BuyerWishListRepo;
 
 import lombok.extern.slf4j.Slf4j;
-
+/*
+ * Buyer WishList Service 
+ * */
 @Slf4j
 @Service
 public class BuyerWishListService {

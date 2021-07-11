@@ -12,6 +12,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/*
+ * Model Class of Vendor Microservice
+ * */
 @Entity
 @Data
 @AllArgsConstructor

@@ -6,6 +6,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 import lombok.extern.slf4j.Slf4j;
 
+/*
+ * Vendor Microservice
+ * */
 @SpringBootApplication
 @EnableDiscoveryClient
 @Slf4j

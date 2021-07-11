@@ -6,6 +6,9 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.cts.model.Stocks;
 
+/*
+ * Stock Repository of Vendor Microservice
+ * */
 public interface StockRepo extends JpaRepository<Stocks, Long> {
 
 

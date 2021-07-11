@@ -8,7 +8,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
+/*
+ * Error Response Data Transfer Object
+ * */
 public class ErrorResponseDto {
 
 	private Date timestamp;

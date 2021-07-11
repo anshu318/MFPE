@@ -1,5 +1,8 @@
 package com.CTS.controller;
 
+/*
+ * Controller class of Product Microservice
+ * */
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +29,14 @@ public class ProductsController {
 	@Autowired
 	private ProductService productService;
 
+	//Get all the products
 	@GetMapping("/getAllProducts")
 	public List<Products> getAllProducts() {
 		log.info("fetching all the products");
 		return productService.getAllProducts();
 	}
 
+	//Search product by id
 	@GetMapping("/productById/{id}")
 	public Products searchProductById(@PathVariable int id) throws ProductNotFoundException {
 		log.info("Product is searching by id");
@@ -39,6 +44,7 @@ public class ProductsController {
 
 	}
 	
+	//Search product by name
 	@GetMapping("/productByName/{name}")
 	public Products searchProductByName(@PathVariable String name) throws ProductNotFoundException 
 	{
@@ -46,6 +52,7 @@ public class ProductsController {
 		return productService.searchProductByName(name);
 	}
 	
+	//Adding rating to the product
 	@PostMapping("/addRating/{productId}/{rating}")
 	public Products addProductRating(@PathVariable int productId, @PathVariable int rating)
 			throws ProductNotFoundException, RatingGreaterThan5Exception 

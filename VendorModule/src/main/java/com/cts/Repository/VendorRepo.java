@@ -1,5 +1,8 @@
 package com.cts.Repository;
 
+/*
+ * Vendor Repository of Vendor Microservice
+ * */
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.cts.model.Vendor;

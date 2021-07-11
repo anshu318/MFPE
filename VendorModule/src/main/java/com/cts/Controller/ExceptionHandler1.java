@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @RestControllerAdvice
 @Slf4j
-
+/*
+ * Exception Handler Class
+ * */
 public class ExceptionHandler1 {
 	@ResponseStatus(code = HttpStatus.NOT_FOUND)
 	@ExceptionHandler({ NoVendorFoundException.class })

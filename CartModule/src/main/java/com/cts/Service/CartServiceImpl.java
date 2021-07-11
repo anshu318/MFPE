@@ -20,6 +20,9 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
+/*
+ * Implementation class of Cart Service
+ * */
 public class CartServiceImpl implements CartService{
 	@Autowired
 	private CartRepository cartRepo;
@@ -40,7 +43,7 @@ public class CartServiceImpl implements CartService{
 
 		Vendor vendoreDetails = rt.getForObject("http://vendor-service/vendor/" + productId + "/" + quantity,
 				Vendor.class);
-		log.info("Vendore call got successfuly");
+		log.info("Vendor call got successfuly");
 		if (isVendorEmpty(vendoreDetails)) {
 			log.info("Vendore Detail is Empty");
 			return "Not Enough Stocks";

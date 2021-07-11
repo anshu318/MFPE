@@ -13,7 +13,9 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-
+/*
+ * Vendor Service Implementation
+ * */
 public class VendorServiceImpl implements VendorService {
 
 	
@@ -30,6 +32,7 @@ public class VendorServiceImpl implements VendorService {
 		return vendorRepo.save(vendore);	
 	}
 	
+	//Calling the vendor microservice to search a vendor by id
 	@Override
 	public Vendor getVendoreById(long vendoreId) {
 		log.info("request for get vendore vendore by id recived");

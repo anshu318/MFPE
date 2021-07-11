@@ -19,7 +19,9 @@ import com.cts.Service.CartService;
 import com.cts.Service.BuyerWishListService;
 
 import lombok.extern.slf4j.Slf4j;
-
+/*
+ * Controller Class of Cart Microservice
+ * */
 @RestController
 @RequestMapping("/cart")
 @Slf4j
@@ -30,6 +32,7 @@ public class CartController {
 	@Autowired
 	private BuyerWishListService customerWishlistService;
 
+	//Adding product to cart
 	@PostMapping("/addProductToCart")
 	public StatusDto addProductToCart(@RequestBody CartRequestDto cartRequestDto) {
 		log.info("Added  product to cart service started");
@@ -38,6 +41,8 @@ public class CartController {
 		return statusDto;
 
 	}
+	
+	//Getting product from cart
 	@GetMapping("/getCart/{customerId}")
 	public List<CartResponseDto> getCartList(@PathVariable long customerId) {
 		log.info("get cart service started");
@@ -46,12 +51,14 @@ public class CartController {
 		return cartList;
 	}
 
+	//Adding product to wishlist 
 	@PostMapping("/addToCustomerWishlist")
 	public StatusDto addToCustomerWishList(@RequestBody BuyerWishListRequestDto customerWishlist) {
 		log.info("Add customer wishList service started");
 		return customerWishlistService.save(customerWishlist);
 	}
 
+	//Getting product from wishlist
 	@GetMapping("/getWishlist/{customerId}")
 	public List<BuyerWishListDto> viewAllWishlis(@PathVariable long customerId){
 		log.info("get cart service started");
