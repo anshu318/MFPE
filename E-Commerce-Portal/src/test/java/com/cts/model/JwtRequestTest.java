@@ -1,4 +1,4 @@
-package com.cognizant.ecommerce.model;
+package com.cts.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

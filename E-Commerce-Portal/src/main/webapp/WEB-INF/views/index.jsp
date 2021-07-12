@@ -32,12 +32,12 @@ html, body {
 
 input[type="text"] {
 	border: 0px;
-	border-radius: 0%;
+	border-radius: 25px;;
 	outline: none;
 }
 
-.search-button {
-	border-radius: 0%;
+#search-button {
+	border-radius: 25px;
 	border: 0%;
 }
 
@@ -133,11 +133,12 @@ a {
 			
 			<form class="form-inline fixed-center my-2 my-lg-0"
 				action="/searchByName" method="get">
+				
 				<input class="form-control mr-sm-2" type="text"
-					placeholder="Search..." name="search" id="search" />
-				<button class="btn btn-primary my-20 my-sm-0" type="submit">
+					placeholder="Search..." name="search" id="search" />&nbsp;
+				<span><button class="btn btn-primary my-20 my-sm-0" type="submit" id="search-button">
 					<i class="fa fa-search" style="color: white;"></i>
-				</button>
+				</button></span>
 			</form>
 			
 			<ul class="navbar-nav ml-auto">
@@ -367,27 +368,7 @@ a {
         });
       }
 
-      $(document).ready(function(){
-    	    $("#search").focus(function() {
-    	      $(".search-box").addClass("border-searching");
-    	      $(".search-icon").addClass("si-rotate");
-    	    });
-    	    $("#search").blur(function() {
-    	      $(".search-box").removeClass("border-searching");
-    	      $(".search-icon").removeClass("si-rotate");
-    	    });
-    	    $("#search").keyup(function() {
-    	        if($(this).val().length > 0) {
-    	          $(".go-icon").addClass("go-in");
-    	        }
-    	        else {
-    	          $(".go-icon").removeClass("go-in");
-    	        }
-    	    });
-    	    $(".go-icon").click(function(){
-    	      $(".search-form").submit();
-    	    });
-    	});
+
      </script>
 </body>
 </html>

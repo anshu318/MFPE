@@ -94,7 +94,7 @@ border-radius: 5px;
             <div class="d-flex justify-content-center h-100">
                 <div class="card" >
                 	<div class="card-header">
-                    <h1 class="login">Login</h1>
+                    <h1 class="login">Login UI</h1>
                     </div>
                     <div class="card-body">
                     <form:form method="post" action="/authenticate" modelAttribute="login">
@@ -113,7 +113,7 @@ border-radius: 5px;
                         </div>
                         <br>
                         <div class="form-group">
-							<input type="submit" value="Login" class="btn float-right login_btn">
+							<input type="submit" value="Login" class="btn float-right login_btn" style="font-weight: bold;">
 						</div>
 						<br>
 			            <div class="form-group col-md-12 err">${error} </div>

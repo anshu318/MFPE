@@ -1,4 +1,4 @@
-package com.cognizant.ecommerce;
+package com.cts;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

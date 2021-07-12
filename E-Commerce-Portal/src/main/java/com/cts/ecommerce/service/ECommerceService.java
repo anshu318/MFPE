@@ -48,7 +48,6 @@ public class ECommerceService {
 	public JwtResponse authticate(JwtRequest authenticationRequest, HttpServletResponse response)
 			throws HttpClientErrorException {
 		log.info("Sending Request to Authorization Microservice");
-		System.out.println("hmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm");
 		ResponseEntity<JwtResponse> responseEntity = restTemplate.postForEntity(uri + "/authenticate",authenticationRequest, JwtResponse.class);
 		//ResponseEntity<JwtResponse> responseEntity = restTemplate.getForEntity(uri + "/authenticate",JwtResponse.class);
 		this.jwtResponse = responseEntity.getBody();
