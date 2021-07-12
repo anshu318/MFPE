@@ -27,6 +27,7 @@
 .bg-custom-2 {
 background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
 }
+
 </style>
 </head>
 <link rel="stylesheet"
@@ -108,7 +109,7 @@ background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
 	<c:set var="errorHead" value="${errorHead}" />
 
 	<div class="errorDiv">
-		<div class="alert">
+		<div style="color:white;">
 			<strong>${errorHead}</strong><br>${error}</div>
 	</div>
 

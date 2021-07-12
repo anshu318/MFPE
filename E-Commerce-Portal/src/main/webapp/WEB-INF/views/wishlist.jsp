@@ -79,7 +79,7 @@ background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
 	<c:set var="error" value="${errorMEssage}" />
 	<c:set var="errorHead" value="${errorHead}" />
 	<div class="errorDiv" >
-	<div class="alert">
+	<div style="color:white;">
   <strong>${errorHead}</strong><br>${error}</div>
   </div>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
