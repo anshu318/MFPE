@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 /*
  * Exception Handler Class
  * */
-public class ExceptionHandler1 {
+public class GlobalExceptionHandler {
 	@ResponseStatus(code = HttpStatus.NOT_FOUND)
 	@ExceptionHandler({ NoVendorFoundException.class })
 	public ErrorResponseDto vendorNotFoundException(Exception exception, HttpServletRequest request) {

@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.client.HttpClientErrorException;
 
 import com.cts.ecommerce.model.ErrorResponseDto;
-
+/*
+ * Custom Error Controller Class
+ * */
 @ControllerAdvice
 @Controller
 public class CustomErrorController implements ErrorController {

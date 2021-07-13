@@ -32,7 +32,9 @@ import com.cts.ecommerce.model.Product;
 import com.cts.ecommerce.model.StatusDTO;
 import com.cts.ecommerce.service.ECommerceService;
 
-
+/*
+ * E-Commerce Portal Controller
+ * */
 @Controller
 public class ECommerceController {
 
@@ -150,7 +152,7 @@ public class ECommerceController {
 		log.info("Handling Request For /addProductRating");
 
 		eCommerceService.setRating(productId, rating);
-		return "goToIndex";
+		return "index";
 	}
 
 	@GetMapping("/logout")
@@ -162,5 +164,5 @@ public class ECommerceController {
 		map.addAttribute("error", "You have logged out please login again if you want to access the app");
 		return "login";
 	}
-//--
+
 }

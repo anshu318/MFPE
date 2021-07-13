@@ -15,7 +15,7 @@ import com.cts.Exception.EmptyCartException;
  * Exception Handler Class
  * */
 @RestControllerAdvice
-public class ExceptionHandler1 {
+public class GlobalExceptionHandler {
 	@ResponseStatus(code = HttpStatus.NOT_FOUND)
 	@ExceptionHandler({ EmptyCartException.class })
 	public ErrorResponseDto productNotFoundException(Exception exception, HttpServletRequest request) {

@@ -6,7 +6,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-
+/*
+ * Authorization Microservice
+ * */
 @EnableDiscoveryClient
 @SpringBootApplication
 @EnableZuulProxy

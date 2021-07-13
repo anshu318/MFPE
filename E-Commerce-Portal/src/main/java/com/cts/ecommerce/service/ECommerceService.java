@@ -29,7 +29,9 @@ import com.cts.ecommerce.model.JwtRequest;
 import com.cts.ecommerce.model.JwtResponse;
 import com.cts.ecommerce.model.Product;
 import com.cts.ecommerce.model.StatusDTO;
-
+/*
+ * E-Commerce Portal Service
+ * */
 @Service
 public class ECommerceService {
 
@@ -54,12 +56,12 @@ public class ECommerceService {
 		this.jwtResponse.setJwttoken("Bearer " + jwtResponse.getJwttoken());
 		response.setHeader("Authorization", jwtResponse.getJwttoken());
 		response.addHeader("customerId", String.valueOf(jwtResponse.getCustomerId()));
-		log.info("Sending Ro Authorization Microservice");
+		log.info("Sending to Authorization Microservice");
 		return this.jwtResponse;
 	}
 
 	public List<Product> getAllProducts() throws HttpClientErrorException {
-		log.info("Sending Request to Product Microservice /getAll");
+		log.info("Sending Request to Product Microservice /getAllProducts");
 		List<Product> list = new ArrayList<>();
 		try {
 			headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
