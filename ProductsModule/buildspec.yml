@@ -19,7 +19,7 @@ phases:
   post_build:
     commands:
     - echo "Entered the post-build phase"
-    - docker push 876983010549.dkr.ecr.us-east-2.amazonaws.com/retail-product-ecr:productapp
+    - docker push 876983010549.dkr.ecr.us-east-2.amazonaws.com/retail-product-ecr:latest
     - printf '[{"name":"productapp-container","imageUri":"%s"}]' 876983010549.dkr.ecr.us-east-2.amazonaws.com/retail-product-ecr:latest > taskdefinition.json
     - cat taskdefinition.json
 artifacts:
