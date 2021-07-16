@@ -24,4 +24,4 @@ phases:
     - cat taskdefinition.json
 artifacts:
   files:
-    - ProductsModule/taskdefinition.json
+    - taskdefinition.json
