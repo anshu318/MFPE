@@ -1,29 +1,27 @@
-version: 1.2.3
-
-
+version: 1.2
 phases:
+  install:
+    runtime-versions:
+      docker: 18
   pre_build:
     commands:
-      - echo Logging in to Amazon ECR...
-      - aws --version
-      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-      - REPOSITORY_URI=876983010549.dkr.ecr.us-east-2.amazonaws.com/product-ecr
-      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
-      - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
+      - echo "Entered the pre-build phase"
+      - $(aws ecr get-login  --no-include-email --region us-east-2)
   build:
     commands:
-      - echo Build started on `date`
-      - echo Building the Docker image...
-      - docker build -t $REPOSITORY_URI:latest .
-      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+      - echo "Entered build phase"
+      - cd ProductsModule
+      - mvn compile
+      - mvn package
+      - echo " building docker image"
+      - docker build -t service/productapp .
+      - docker tag service/productapp 876983010549.dkr.ecr.us-east-2.amazonaws.com/retail-product-ecr:latest
   post_build:
     commands:
-      - echo Build completed on `date`
-      - echo Pushing the Docker images...
-      - docker push $REPOSITORY_URI:latest
-      - docker push $REPOSITORY_URI:$IMAGE_TAG
-      - echo Writing image definitions file...
-      - printf '[{"name":"productapp-container","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
-      - cat imagedefinitions.json 
+    - echo "Entered the post-build phase"
+    - docker push 876983010549.dkr.ecr.us-east-2.amazonaws.com/retail-product-ecr:productapp
+    - printf '[{"name":"productapp-container","imageUri":"%s"}]' 876983010549.dkr.ecr.us-east-2.amazonaws.com/retail-product-ecr:latest > taskdefinition.json
+    - cat taskdefinition.json
 artifacts:
-    files: imagedefinitions.json
+  files:
+    - ProductsModule/taskdefinition.json
