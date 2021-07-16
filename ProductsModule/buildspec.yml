@@ -14,13 +14,13 @@ phases:
       - mvn compile
       - mvn package
       - echo " building docker image"
-      - docker build -t service/productapp .
-      - docker tag service/productapp 876983010549.dkr.ecr.us-east-2.amazonaws.com/retail-product-ecr:latest
+      - docker build -t product-ecr .
+      - docker tag product-ecr 876983010549.dkr.ecr.us-east-2.amazonaws.com/product-ecr:latest
   post_build:
     commands:
     - echo "Entered the post-build phase"
-    - docker push 876983010549.dkr.ecr.us-east-2.amazonaws.com/retail-product-ecr:latest
-    - printf '[{"name":"productapp-container","imageUri":"%s"}]' 876983010549.dkr.ecr.us-east-2.amazonaws.com/retail-product-ecr:latest > taskdefinition.json
+    - docker push 876983010549.dkr.ecr.us-east-2.amazonaws.com/product-ecr:latest
+    - printf '[{"name":"productapp-container","imageUri":"%s"}]' 876983010549.dkr.ecr.us-east-2.amazonaws.com/product-ecr:latest > taskdefinition.json
     - cat taskdefinition.json
 artifacts:
   files:
